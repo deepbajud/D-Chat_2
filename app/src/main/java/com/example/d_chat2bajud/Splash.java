@@ -12,12 +12,14 @@ import com.example.d_chat2bajud.utils.AndroidUtil;
 import com.example.d_chat2bajud.utils.FirebaseUtil;
 
 
-public class SplashActivity extends AppCompatActivity {
+public class Splash extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        getWindow().setStatusBarColor(getResources().getColor(R.color.my_primary));
+
 
         if(getIntent().getExtras()!=null){
             //from notification
@@ -42,12 +44,14 @@ public class SplashActivity extends AppCompatActivity {
 
         }else{
             new Handler().postDelayed(new Runnable() {
+
                 @Override
                 public void run() {
+
                     if(FirebaseUtil.isLoggedIn()){
-                        startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                        startActivity(new Intent(Splash.this,MainActivity.class));
                     }else{
-                        startActivity(new Intent(SplashActivity.this,LoginPhoneNumberActivity.class));
+                        startActivity(new Intent(Splash.this, LoginPhoneNumber.class));
                     }
                     finish();
                 }

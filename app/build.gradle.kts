@@ -49,4 +49,7 @@ dependencies {
 
     //sdp
     implementation("com.intuit.sdp:sdp-android:1.1.0")
+
+    //country code picker
+    implementation("com.hbb20:ccp:2.5.1")
 }
